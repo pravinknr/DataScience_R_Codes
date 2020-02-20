@@ -1,5 +1,6 @@
 #Hypothesis Testing
 #Hypothesis testing is done to make decisions
+#Define the below hypothesis
 #h0 = NULL #This is condition 1
 #ha = Alternative #this is condition 2
 
@@ -11,7 +12,7 @@
 #mew = mean of population
 #Sigma = Std DEviation of population
 
-#Alpha = 0.05 #Alpha value is by default 0.05
+#Alpha = 0.05 #Alpha value will be given in the question. #If Alpha value is not given then Alpha value is by default 0.05
 
 #If we have population parameters then we should do Z test #(Std Deviation is important)
 #If we dont have population Parameters we should do T test 
@@ -20,8 +21,7 @@
 
 #The Formula for T test is t = mean - mew / (Std Deviation/sqrt(n))
 
-
-#Lets take an Example
+#Lets take an Example of 1 Sample
 
 mean<- 122
 mew<- 130
@@ -57,22 +57,50 @@ day11 <- 3/sqrt(50)
 day111<- day1/day11 #t value of the above values
 
 pday1<- pt(day111,49)
-pday11<-2*pday1 #pvalue of the t
+pday11<-2*pday1 #pvalue of the t when t is Negative
 
 #Example 2
 day2<- 4.1-4
 day22<- 3/sqrt(50)
 day222<- day2/day22
 
-pday2<- 1-pt(day222,49)
+pday2<- 1-pt(day222,49) #probability of t when t is positive
 pday22 <- 2*pday2           
 
 
 
 #To do the Hypothesis Testing in R we have the Following Function
-# t.test(x,alternative = c("less","greater","both.sided"),mu="standard mean value") #Here Alternative is ha where we have to speify the condition is lesser or greater or equal
+# t.test(x,alternative = c("less","greater","two.sided"),mu="standard mean value") #Here Alternative is ha where we have to speify the condition is lesser or greater or equal
 
-#lets take an example
+#lets take an example of 1 sample
 
 x<- c(0.593,0.142,0.329,0.691,0.793,0.519,0.392,0.418)
 t.test(x,alternative = "greater",mu=0.3)
+
+
+#Lets take an example of 2 sample and 2 tail
+
+#Lets do it manually
+#h0 = mew_treat - mew_control = 0
+#ha = mew_treat - mew_ control != 0
+control<- c(91,87,99,77,88,91)
+treatment<- c(101,110,103,93,99,104)
+
+m_control <- mean(control)
+m_treatment <- mean(treatment)
+
+s<- sd(treatment) #to find the standard deviation
+
+t1<- m_treatment - m_control
+t11 <- s/sqrt(6)
+t111 <- t1/t11
+
+pt1<- 2*(1-pt(t111,5)) #probability of t value for 2 tails when t is positive
+#Here probability value of p is less than Alpha value so we will reject h0
+#So the conclusion is mew_treat != mew_control
+
+#Lets try this in R
+
+conclusion <- t.test(control,treatment,alternative = "two.sided")
+conclusion
+         
