@@ -24,7 +24,7 @@ km <- kmeans(data,8) #Here we are using the kmeans algorithm with k value as 8
 km$centers #To find the centroid of the Clusters
 km$cluster #To find the datapoints Cluster number
 
-#In order to see the execution of kmeans algorith, we use the animation package
+#In order to see the execution of kmeans algorithm, we use the animation package
 
 install.packages("animation")
 library(animation)
