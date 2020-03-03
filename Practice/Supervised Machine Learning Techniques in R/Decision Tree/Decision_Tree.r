@@ -15,7 +15,7 @@ testing<- iris[-inTraininglocal,]
 
 #Model Building
 #Model should be built on Training Dataset
-model <- C5.0(training$Species~., data = training) #Trials - Boosting Parameter
+model <- C5.0(training$Species~., data = training)
 
 #Generate the Model Summary
 summary(model)
