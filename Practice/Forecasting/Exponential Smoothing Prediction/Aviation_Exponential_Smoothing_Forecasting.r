@@ -92,3 +92,22 @@ plot(forecast(new_model,n.ahead=4))
 
 # Forecasted values for the next 4 quarters
 forecast_new <- data.frame(predict(new_model,n.ahead=4))
+
+
+#ARIMA Models
+plot(train)
+acf(train) #for Moving Average(MA) q value
+pacf(train) #For Auto Regressive(AR) p value
+a<- arima(train, order = c(1,1,8), method = "ML") #Here in Order the first 1 stands for p, the second 1 stands for d i.e the differencing for Integration and the 8 stands for q
+
+#Auto.ARIMA model on the price agg data
+library(forecast)
+model_AA <- auto.arima(train)
+model_AA
+pred_AA <- data.frame(forecast(model_AA))
+pred_AA
+
+acf(model_AA$residuals) #For finding significance in error data
+pacf(model_AA$residuals) #For finding the significance in error data
+windows()
+plot(forecast(model_AA, h=12),xaxt = "n")
