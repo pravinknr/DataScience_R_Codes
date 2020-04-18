@@ -32,7 +32,7 @@ confusion<-table(prob>0.5,claimants$ATTORNEY)
 confusion 
 
 # Model Accuracy
-Accuracy<-sum(diag(confusion)/sum(confusion))#costruct a diagoal matrix
+Accuracy<-sum(diag(confusion)/sum(confusion))#costruct a diagonal matrix
 help("diag")
 Accuracy #70.62
 
