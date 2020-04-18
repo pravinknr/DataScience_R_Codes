@@ -1,6 +1,6 @@
 #claimants<-read.csv(file.choose())
 sum(is.na(claimants))#gives the number of NA values Available in the dataset
-claimants<-na.omit(claimants)#omatting NA values from the data
+claimants<-na.omit(claimants)#omitting NA values from the data
 #na.omit=> will omit the rows which has atleast 1NA value
 
 dim(claimants) #Gives the total count of rows and columns in the dataset 
