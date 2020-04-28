@@ -1,4 +1,6 @@
-#claimants<-read.csv(file.choose())
+#Logistic Regression
+
+claimants<-read.csv(file.choose())
 sum(is.na(claimants))#gives the number of NA values Available in the dataset
 claimants<-na.omit(claimants)#omitting NA values from the data
 #na.omit=> will omit the rows which has atleast 1NA value
@@ -34,5 +36,5 @@ confusion
 # Model Accuracy
 Accuracy<-sum(diag(confusion)/sum(confusion))#costruct a diagonal matrix
 help("diag")
-Accuracy #70.62
+Accuracy #70.52
 
