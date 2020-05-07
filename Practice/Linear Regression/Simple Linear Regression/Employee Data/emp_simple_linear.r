@@ -6,30 +6,30 @@
 
 #Lets Import the Data
 emp <- read.csv("E:\\Data Science\\Assignment\\Simple Linear Regression\\Employee Data\\emp_data.csv")
-
+attach(emp)
 summary(emp) #Gives the Summary of the dataset
-sd(emp$Salary_hike) #Gives Standard Deviation
-var(emp$Churn_out_rate) #Gives Variance
+sd(Salary_hike) #Gives Standard Deviation
+var(Churn_out_rate) #Gives Variance
 
-sd(emp$Churn_out_rate)
-var(emp$Salary_hike)
+sd(Churn_out_rate)
+var(Salary_hike)
 
 plot(emp)
 
 #Lets build a Linear Model
-model <- lm(emp$Churn_out_rate~., data = emp)
+model <- lm(Churn_out_rate~., data = emp)
 plot(model)
 summary(model)
 #Here the P-value is less than 0.05 and the R-Squared value is 0.8312 with Residual Standard Error as 4.469
 
 #Lets do Data Transformation and build models
 #Squareroot Transformation
-sqrt_model<-lm(emp$Churn_out_rate~.,sqrt(emp))
+sqrt_model<-lm(sqrt(Churn_out_rate)~.,emp)
 summary(sqrt_model)
 #Here the R-Square value is 0.84 with Residual Standard Error as 4.351
 
 #Log Transformation
-log_model<-lm(log(emp$Churn_out_rate)~.,data=emp)
+log_model<-lm(log(Churn_out_rate)~.,data=emp)
 summary(log_model)
 #Here we get R-Square value as 0.8735 and Residual Standard Error as 0.0519
 
