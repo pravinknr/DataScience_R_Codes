@@ -5,16 +5,17 @@
 
 #Lets Import the Data
 plastic <- read.csv(file.choose())
+attach(plastic)
 View(plastic)
 
 summary(plastic)
 
-sd(plastic$Sales) #Standard Deviation
+sd(Sales) #Standard Deviation
 
-var(plastic$Sales) #Variance
+var(Sales) #Variance
 
 #Lets do a line Plot of the data
-plot(plastic$Sales, type = "l") 
+plot(Sales, type = "l") 
 
 #Lets create Dummy Variables for 12 Months
 x<- data.frame(outer(rep(month.abb,length = 60), month.abb,"==") + 0 )# Creating dummies for 12 months

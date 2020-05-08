@@ -4,36 +4,37 @@
 #Lets Import the dataset
 
 bank <- read.csv(file.choose(), sep = ";") #The dta in the file is seperated using Semi-Colons
+attach(bank)
 summary(bank)
 
 #Standard Deviation
-sd(bank$age)
-sd(bank$balance)
-sd(bank$duration)
-sd(bank$campaign)
-sd(bank$pdays)
-sd(bank$previous)
+sd(age)
+sd(balance)
+sd(duration)
+sd(campaign)
+sd(pdays)
+sd(previous)
 
 #Variance
-var(bank$age)
-var(bank$balance)
-var(bank$duration)
-var(bank$campaign)
-var(bank$pdays)
-var(bank$previous)
+var(age)
+var(balance)
+var(duration)
+var(campaign)
+var(pdays)
+var(previous)
 
 #We see that the categorical Variables are defined as Character. Lets convert it into the Categorical variable using Factor function
 
-bank$job <- as.factor(bank$job)
-bank$marital <- as.factor(bank$marital)
-bank$education <- as.factor(bank$education)
-bank$default <- as.factor(bank$default)
-bank$housing <- as.factor(bank$housing)
-bank$loan <- as.factor(bank$loan)
-bank$contact <- as.factor(bank$contact)
-bank$month <- as.factor(bank$month)
-bank$poutcome <- as.factor(bank$poutcome)
-bank$y <- as.factor(bank$y)
+job <- as.factor(job)
+marital <- as.factor(marital)
+education <- as.factor(education)
+default <- as.factor(default)
+housing <- as.factor(housing)
+loan <- as.factor(loan)
+contact <- as.factor(contact)
+bank <- as.factor(month)
+poutcome <- as.factor(poutcome)
+y <- as.factor(y)
 
 summary(bank)
 
@@ -41,7 +42,7 @@ windows()
 pairs(bank)
 #Lets Build a generalized linear regression model
 
-bank_model <- glm(bank$y~. , data = bank, family = "binomial")
+bank_model <- glm(y~. , data = bank, family = "binomial")
 summary(bank_model)
 
 #Lets predict the values using the model

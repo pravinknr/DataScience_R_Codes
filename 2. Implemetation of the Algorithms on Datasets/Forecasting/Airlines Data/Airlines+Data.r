@@ -6,13 +6,14 @@
 #Lets Import the Data
 library(xlsx)
 airlines <- read.xlsx(file.choose(),1)
+attach(airlines)
 View(airlines)
 
 summary(airlines)
 
-sd(airlines$Passengers) #Standard Deviation
+sd(Passengers) #Standard Deviation
 
-var(airlines$Passengers) #Variance
+var(Passengers) #Variance
 
 #Lets do a line Plot of the data
 plot(airlines, type = "l") 

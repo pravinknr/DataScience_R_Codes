@@ -9,16 +9,17 @@ library(xlsx)
 #Lets Import the Data
 
 coca <- read.xlsx(file.choose(),1)
+attach(coca)
 View(coca)
 
 summary(coca)
 
-sd(coca$Sales) #Standard Deviation
+sd(Sales) #Standard Deviation
 
-var(coca$Sales) #Variance
+var(Sales) #Variance
 
 #Lets do a line Plot of the data
-plot(coca$Sales, type = "l") 
+plot(Sales, type = "l") 
 
 #Lets create Dummy Variables for 4 Quarters
 

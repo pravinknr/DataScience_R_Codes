@@ -4,43 +4,44 @@
 #Import the creditcard.csv file
 
 creditcard <- read.csv(file.choose())
+attach(creditcard)
 summary(creditcard)
 
 #We dont want the first column so we will remove it
 creditcard1 <- creditcard[,-1]
 
 #Standard Deviation
-sd(creditcard1$reports)
-sd(creditcard1$age)
-sd(creditcard1$income)
-sd(creditcard1$share)
-sd(creditcard1$expenditure)
-sd(creditcard1$dependents)
-sd(creditcard1$months)
-sd(creditcard1$majorcards)
-sd(creditcard1$active)
+sd(reports)
+sd(age)
+sd(income)
+sd(share)
+sd(expenditure)
+sd(dependents)
+sd(months)
+sd(majorcards)
+sd(active)
 
 #Variance
-var(creditcard1$reports)
-var(creditcard1$age)
-var(creditcard1$income)
-var(creditcard1$share)
-var(creditcard1$expenditure)
-var(creditcard1$dependents)
-var(creditcard1$months)
-var(creditcard1$majorcards)
-var(creditcard1$active)
+var(reports)
+var(age)
+var(income)
+var(share)
+var(expenditure)
+var(dependents)
+var(months)
+var(majorcards)
+var(active)
 
 #Lets convert the Categorical columns into Factors
-creditcard1$card <- as.factor(creditcard1$card)
-creditcard1$owner <- as.factor(creditcard1$owner)
-creditcard1$selfemp <- as.factor(creditcard1$selfemp)
+card <- as.factor(card)
+owner <- as.factor(owner)
+selfemp <- as.factor(selfemp)
 summary(creditcard1)
 sum(is.na(creditcard1)) #To see total Number of Null Value
 
 #Lets build a Logistic Regression Model
 
-credit_model <- glm(creditcard1$card~. , data = creditcard1, family = "binomial")
+credit_model <- glm(card~. , data = creditcard1, family = "binomial")
 summary(credit_model)
 
 pred <- predict(credit_model,type = "response")
