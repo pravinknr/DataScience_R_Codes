@@ -2,6 +2,7 @@
 
 #Implement a KNN model to classify the animals in to categories
 
+library(factoextra)
 #Lets Import the Data
 zoo <- read.csv(file.choose())
 attach(zoo)
@@ -113,3 +114,23 @@ Acc14
 #For k=11 the Accuracy is 81.63% Also it has not Classified Type 3 and 5 while Predicting.
 
 #Again we can conclude that the model is best when k =1.
+
+#Now Lets Create a loop for K-value and build Models for them
+
+acc <- c()
+for (i in 1:50) #We will take k-Values from 1 to 50
+{
+  print(i)
+  
+  #Lets Build the Model
+  class1 <-knn(train = training[,-17], test = testing[,-17], cl = training$`zoo$type`, k=i) 
+  CrossTable(testing$`zoo$type`, class1, prop.r = F, prop.c = F, prop.chisq = F)
+  tab1 <- table(testing$`zoo$type`, class1)
+  acc <- c(acc,round((sum(diag(tab1))/sum(tab1))*100, digits = 2))
+}
+
+summary(acc)
+acctable <- data.frame("k" = 1:50, "Accuracy123" = acc)
+attach(acctable)
+ggplot(acctable, mapping = aes(k, Accuracy123)) + geom_text(aes(label = k), vjust = 3) +geom_line(linetype = "dashed", arrow = arrow())  + geom_point() +  ggtitle("Model Accuracy for 50 Different models")
+#Here we can see that k = 5 has the Highest Model Accuracy

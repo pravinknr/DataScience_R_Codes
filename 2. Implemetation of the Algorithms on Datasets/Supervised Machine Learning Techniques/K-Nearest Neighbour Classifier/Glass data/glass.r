@@ -174,3 +174,26 @@ Acc7 <- round(sum(diag(tab7))/sum(tab7)*100, digits = 3)
 Acc7
 #For k=21 the Accuracy is 63.81%
 #Thus we Conclude that the model performs the Best for k= 1 and k=2
+
+#Lets Construct a For Loop and Build Multiple Models for Different K values
+
+accuracy <- c()
+for (i in 1:25) #This will Take k values from 1 to 25
+  {
+  print(i)
+  
+  class1 <- knn(train = training[,-10], test = testing[,-10], cl = training[,10], k=i)
+  CrossTable(testing$`glass$Type`, class1, prop.r = F, prop.c = F,prop.chisq = F)
+  tab1 <- table(testing$`glass$Type`, class1)
+  accuracy <- c(accuracy,round(sum(diag(tab1))/sum(tab1)*100, digits = 2))
+  
+}
+
+summary(accuracy)
+boxplot(accuracy)
+
+AccuracyTable <- data.frame("K.value" = 1:25, "Accuracy" = accuracy)
+attach(AccuracyTable)
+
+ggplot(AccuracyTable, mapping = aes(K.value, Accuracy)) + geom_line(linetype = "dashed") + geom_point() + ggtitle("Model Accuracy for Different K-Value")
+#Here k=3 has the Highest Accuracy
