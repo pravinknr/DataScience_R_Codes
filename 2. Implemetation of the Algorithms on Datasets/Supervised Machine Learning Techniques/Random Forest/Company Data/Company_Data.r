@@ -5,9 +5,15 @@
 #A Random Forest can be built with target variable Sale (we will first convert it in categorical variable) & all other variable will be independent in the analysis.  
 
 install.packages("randomForest")
+install.packages("caret", dependencies = TRUE)
 library(randomForest)
 library(caret)
 library(gmodels)
+library(pROC)
+library(DMwR)
+library(dplyr)
+install.packages("dismo")
+library(dismo)
 
 #Lets Import the Dataset
 company <- read.csv(file.choose())
@@ -76,10 +82,18 @@ High <- as.factor(High)
 #Lets Combine it with the new Dataset
 company_new <- cbind(company[,-1],High) #Here we have Excluded the Sales Column as we have Derived a new Variable High Using it.
 str(company_new)
+prop.table(table(company_new$High)) #The ratio of class imbalance here is 60:40
+
 #Lets Create the Training and Testing sets
 indatapartition <- createDataPartition(company_new$High, p=.60, list = F) #This will Hold 60% of the whole dataset
 training <- company_new[indatapartition,]
 testing <- company_new[-indatapartition,]
+
+
+#Lets Build a trainControl setup for the Training Class - K-Folds Technique
+ctrl <- trainControl(method = "repeatedcv", number = 5, repeats = 15, verboseIter = TRUE, classProbs = TRUE)
+#I have used this function in the model inside the For Loop
+
 
 #Lets Build a model for the Entire Dataset
 
@@ -94,35 +108,39 @@ tab1
 Acc1 <- sum(diag(tab1))/sum(tab1)
 Acc1
 
-#Lets Build the Model for Training set and predict the Testing set
-rf2 <- randomForest(High~., data = training, ntree = 500)
-rf2
-print(importance(rf2))
-pred2 <- predict(rf2, testing[,-11])
-tab2 <- table(testing[,11], pred2)
-tab2
-Acc2 <- sum(diag(tab2))/sum(tab2)
-Acc2
+#Lets Make a loop for Different number of Trees
+trees1 <- c(100,500,700,1100,1500)
 
-#For 1000 trees
-rf3 <- randomForest(High~., data = training, ntree = 1000)
-rf3
-print(importance(rf3))
-pred3 <- predict(rf3, testing[,-11])
-tab3 <- table(testing[,11], pred3)
-tab3
-Acc3 <- sum(diag(tab3))/sum(tab3)
-Acc3
+acc <- c()
+precision1 <- c()
+recall1 <- c()
+f1score <- c()
+auc <- c()
 
-#For 1500 trees
-rf4 <- randomForest(High~., data = training, ntree = 1500)
-rf4
-print(importance(rf4))
-pred4 <- predict(rf4, testing[,-11])
-tab4 <- table(testing[,11], pred4)
-tab4
-Acc4 <- sum(diag(tab4))/sum(tab4)
-Acc4
+for(i in trees1) {
+  print(i)
+  
+  forest1 <- randomForest(High~. , data = training, trControl = ctrl,method = "gbm", ntree = i)
+  forest1
+  pred <- predict(forest1,testing[,-11], type = "response")
+  conf <- confusionMatrix(pred,testing$High, mode = "everything")
+  conf$byClass
+  areaundercurve <- roc(response = testing$High, predictor =factor(pred, ordered = TRUE), decreasing = TRUE)
+  acc <- c(acc, conf$overall[1])
+  precision1 <- c(precision1, conf$byClass[5])
+  recall1 <- c(recall1, conf$byClass[6])
+  f1score <- c(f1score, conf$byClass[7])
+  auc <- c(auc, areaundercurve$auc)
+}
+recall1
+precision1
+acc
+
+Evaluation <-data.frame("No of Trees" = trees1, "Accuracy" = acc, "Precision" = precision1, "Recall" = recall1, "F1" = f1score, "AUC" = auc)
+Evaluation
+
+
+
 
 #Lets Normalize the Data and see if the Accuracy of the Model Increases
 
@@ -150,23 +168,32 @@ Acc5 <- sum(diag(tab5))/sum(tab5)
 Acc5
 #So here we observe that the Accuracy has decreased
 
-#Lets increase the tree Numbers and check
-rf6 <- randomForest(High~. , data = training1, ntree = 1500)
-rf6 #Here we can Observe that the Out Of Bag(OOB) estimate of error rate has decreased from 20% to 14%
-print(importance(rf6))
-pred6 <- predict(rf6, testing1[,-11])
-tab6 <- table(testing1[,11], pred6)
-tab6
-Acc6 <- sum(diag(tab6))/sum(tab6)
-Acc6
-#Here also we can see that there is a slight Increase in the Accuracy
+acc1 <- c()
+precision11 <- c()
+recall11 <- c()
+f1score1 <- c()
+auc1 <- c()
 
-rf7 <- randomForest(High~. , data = training1, ntree = 5000)
-rf7
-print(importance(rf7))
-pred7 <- predict(rf7, testing1[,-11])
-tab7 <- table(testing1[,11], pred7)
-tab7
-Acc7 <- sum(diag(tab7))/sum(tab7)
-Acc7
+for(i in trees1) {
+  print(i)
+  
+  forest11 <- randomForest(High~. , data = training1, trControl = ctrl,method = "gbm", ntree = i)
+  forest11
+  pred1 <- predict(forest11,testing1[,-11], type = "response")
+  conf1 <- confusionMatrix(pred1,testing$High, mode = "everything")
+  conf1$byClass
+  areaundercurve1 <- roc(response = testing1$High, predictor =factor(pred1, ordered = TRUE), decreasing = TRUE)
+  acc1 <- c(acc1, conf1$overall[1])
+  precision11 <- c(precision11, conf1$byClass[5])
+  recall11 <- c(recall11, conf1$byClass[6])
+  f1score1 <- c(f1score1, conf1$byClass[7])
+  auc1 <- c(auc1, areaundercurve1$auc)
+}
+recall11
+precision11
+acc1
+
+Evaluation1 <-data.frame("No of Trees" = trees1, "Accuracy" = acc1, "Precision" = precision11, "Recall" = recall11, "F1" = f1score1, "AUC" = auc1)
+Evaluation1
+
 #So we Can Conclude that the Variables that cause High sales are Advertising, ShelveLoc and Price (Using Importance() Function)

@@ -7,6 +7,7 @@ library(gmodels)
 library(ggplot2)
 library(caret)
 library(dplyr)
+library(pROC)
 
 
 #Lets Import the Data
@@ -68,6 +69,11 @@ intraininglocal <- createDataPartition(fraud1$risk, p=.60, list = F) #Here p=.60
 train1 <- fraud1[intraininglocal,]
 test1 <- fraud1[-intraininglocal,]
 
+
+#Lets Build a trainControl setup for the Training Class - K-Folds Technique
+ctrl <- trainControl(method = "repeatedcv", number = 5, repeats = 15, verboseIter = TRUE, classProbs = TRUE)
+
+
 #Lets Build the Random forest Model
 rf1 <-  randomForest(risk~. , data = train1, ntree = 500)
 rf1
@@ -77,30 +83,35 @@ CrossTable(test1[,6], pred1)
 tab1 <- table(test1[,6], pred1)
 sum(diag(tab1))/sum(tab1)
 
-#Lets try with more number of trees
-rf2 <-  randomForest(risk~. , data = train1, ntree = 1000)
-rf2
-print(importance(rf2))
-pred2 <- predict(rf2, test1[,-6])
-CrossTable(test1[,6], pred2)
-tab2 <- table(test1[,6], pred2)
-sum(diag(tab2))/sum(tab2)
+trees1 <- c(100,400,700,1100,1500)
 
-rf3 <-  randomForest(risk~. , data = train1, ntree = 2500)
-rf3
-print(importance(rf3))
-pred3 <- predict(rf3, test1[,-6])
-CrossTable(test1[,6], pred3)
-tab3 <- table(test1[,6], pred3)
-sum(diag(tab3))/sum(tab3)
+acc <- c()
+precision1 <- c()
+recall1 <- c()
+f1score <- c()
+auc <- c()
 
-rf4 <-  randomForest(risk~. , data = train1, ntree = 5000)
-rf4
-print(importance(rf4))
-pred4 <- predict(rf4, test1[,-6])
-CrossTable(test1[,6], pred4)
-tab4 <- table(test1[,6], pred4)
-sum(diag(tab4))/sum(tab4)
+for(i in trees1) {
+  print(i)
+  
+  forest1 <- randomForest(risk~. , data = train1, trControl = ctrl,method = "gbm", ntree = i)
+  forest1
+  pred <- predict(forest1,test1[,-6], type = "response")
+  conf <- confusionMatrix(pred,test1$risk, mode = "everything")
+  conf$byClass
+  areaundercurve <- roc(response = test1$risk, predictor =factor(pred, ordered = TRUE), decreasing = TRUE)
+  acc <- c(acc, conf$overall[1])
+  precision1 <- c(precision1, conf$byClass[5])
+  recall1 <- c(recall1, conf$byClass[6])
+  f1score <- c(f1score, conf$byClass[7])
+  auc <- c(auc, areaundercurve$auc)
+}
+recall1
+precision1
+acc
+
+Evaluation <-data.frame("No of Trees" = trees1, "Accuracy" = acc, "Precision" = precision1, "Recall" = recall1, "F1" = f1score, "AUC" = auc)
+Evaluation
 
 #Lets Normalise the Data and try
 normalise <- function(x) {
@@ -123,12 +134,32 @@ CrossTable(test2[,6], pred5)
 tab5 <- table(test2[,6], pred5)
 sum(diag(tab5))/ sum(tab5)
 
-rf6 <- randomForest(risk~., data = train2, ntree = 2000)
-rf6
-print(importance(rf6))
-pred6 <- predict(rf6, test2[,-6])
-CrossTable(test2[,6], pred6)
-tab6 <- table(test2[,6], pred6)
-sum(diag(tab6))/ sum(tab6)
+acc1 <- c()
+precision11 <- c()
+recall11 <- c()
+f1score1 <- c()
+auc1 <- c()
+
+for(i in trees1) {
+  print(i)
+  
+  forest11 <- randomForest(risk~. , data = train2, trControl = ctrl,method = "gbm", ntree = i)
+  forest11
+  pred1 <- predict(forest11,test2[,-6], type = "response")
+  conf1 <- confusionMatrix(pred1,test2$risk, mode = "everything")
+  conf1$byClass
+  areaundercurve1 <- roc(response = test2$risk, predictor =factor(pred1, ordered = TRUE), decreasing = TRUE)
+  acc1 <- c(acc1, conf1$overall[1])
+  precision11 <- c(precision11, conf1$byClass[5])
+  recall11 <- c(recall11, conf1$byClass[6])
+  f1score1 <- c(f1score1, conf1$byClass[7])
+  auc1 <- c(auc1, areaundercurve1$auc)
+}
+recall11
+precision11
+acc1
+
+Evaluation1 <-data.frame("No of Trees" = trees1, "Accuracy" = acc1, "Precision" = precision11, "Recall" = recall11, "F1" = f1score1, "AUC" = auc1)
+Evaluation1
 
 #Here the Variables with high MeanDecreaseGini value are City.Poluation and Work.Experience
