@@ -62,6 +62,9 @@ ggplot(fraud %>% group_by(Urban) %>% summarise(Count = n())) + geom_bar(aes(Urba
 risk <- ifelse(fraud$Taxable.Income <= 30000, "Risky","Good")
 risk <- as.factor(risk)
 fraud1 <- cbind(fraud[,-3],risk) #Here we Exclude Taxable.Income Variable as we derived Responsive Variable risk Using it.
+table(risk)
+#Here we can see a class imblance
+
 
 #Now lets divide the data into Train and Test Data with 80% partion
 
@@ -163,3 +166,29 @@ Evaluation1 <-data.frame("No of Trees" = trees1, "Accuracy" = acc1, "Precision" 
 Evaluation1
 
 #Here the Variables with high MeanDecreaseGini value are City.Poluation and Work.Experience
+
+#Lets treat the class imbalane using the SMOTE function
+library(DMwR)
+newdata <- SMOTE(risk~. , data = fraud1, perc.over = 200, perc.under = 200)
+newdata
+table(newdata$risk)
+#Now lets divide it in train and test set
+library(caTools)
+split <- sample.split(newdata$risk, SplitRatio = 0.75)
+train3 <- newdata[split,]
+test3 <- newdata[-split,]
+
+rf3 <- randomForest(risk~. , data = train3, ntree = 1500, method = "gbm")
+rf3
+pred1 <- predict(rf3,test3[,-6], type = "response")
+conf1 <- confusionMatrix(pred1,test3$risk, mode = "everything")
+conf1$byClass
+areaundercurve1 <- roc(response = test3$risk, predictor =factor(pred1, ordered = TRUE), decreasing = TRUE)
+acc1 <-  conf1$overall[1]
+precision11 <-conf1$byClass[5]
+recall11 <-  conf1$byClass[6]
+f1score1 <- conf1$byClass[7]
+auc1 <- areaundercurve1$auc
+
+plot(areaundercurve1)
+#Now we got the Best F1 score and the Area under curve
