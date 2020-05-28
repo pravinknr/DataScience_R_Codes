@@ -1,4 +1,4 @@
-
+[![visits](https://github-visit-counter.herokuapp.com/pravinknr/DataScience_R_Codes/visits.svg)](#)
 ![](https://img.shields.io/drone/build/pravinknr/DataScience_R_Codes)
 ![](https://img.shields.io/github/issues/pravinknr/DataScience_R_Codes)
 ![](https://img.shields.io/github/packagist/stars/pravinknr/DataScience_R_Codes)
