@@ -1,4 +1,5 @@
 [![visits](https://github-visit-counter.herokuapp.com/pravinknr/DataScience_R_Codes/visits.svg)](#)
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://pravinknr.github.io/DataScience_R_Codes/)]
 ![](https://img.shields.io/drone/build/pravinknr/DataScience_R_Codes)
 ![](https://img.shields.io/github/issues/pravinknr/DataScience_R_Codes)
 ![](https://img.shields.io/github/packagist/stars/pravinknr/DataScience_R_Codes)
