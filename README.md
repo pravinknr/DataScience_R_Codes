@@ -175,3 +175,5 @@ We require [Positive Words](https://github.com/pravinknr/DataScience_R_Codes/blo
 | --- | --- | --- | --- |
 | 1. | Emotion Mining | [Amazon Nokia Lumia Reviews.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/NLP%20-%20Natural%20Language%20Processing/Emotion%20Mining/amazon%20nokia%20lumia%20reviews.txt) | [Emotion_Mining_Amazon.r]() |
 | 2. | Sentiment Analysis | [McD_Small.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/NLP%20-%20Natural%20Language%20Processing/Sentiment%20Analysis%20in%20r/McD/Mcd_Small.csv) | [Sentiment Analysis_McD.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/NLP%20-%20Natural%20Language%20Processing/Sentiment%20Analysis%20in%20r/McD/Sentiment_Analysis_Mcd.r) |
+
+**To be Continued**
