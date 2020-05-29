@@ -1,12 +1,8 @@
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/pravinknr" data-color-scheme="no-preference: dark; light: light; dark: dark;" aria-label="Follow @pravinknr on GitHub">Follow @pravinknr</a>
 
-
-![](https://img.shields.io/drone/build/pravinknr/DataScience_R_Codes)
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/pravinknr/DataScience_R_Codes/fork" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-repo-forked" aria-label="Fork pravinknr/DataScience_R_Codes on GitHub">Fork</a>
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/pravinknr/DataScience_R_Codes" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-star" aria-label="Star pravinknr/DataScience_R_Codes on GitHub">Star</a>
+![](https://img.shields.io/github/followers/pravinknr?label=Follow%40pravinknr&style=social)
+![](https://img.shields.io/github/forks/pravinknr/DataScience_R_Codes?label=Fork&style=social)
+![](https://img.shields.io/github/stars/pravinknr/DataScience_R_Codes?style=social)
+![](https://img.shields.io/github/watchers/pravinknr/DataScience_R_Codes?style=social)
 ![](https://img.shields.io/github/issues/pravinknr/DataScience_R_Codes)
 ![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://pravinknr.github.io/DataScience_R_Codes/)]
 ![](https://img.shields.io/github/repo-size/pravinknr/DataScience_R_Codes)
