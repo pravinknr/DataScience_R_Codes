@@ -215,9 +215,7 @@ I have Performed this code for Extracting [Reviews of Apple Macbook Air](https:/
 
 ***
 
-***
-
-## After Going Through the basics, We will Now Perform Algoritjmson Different Datasets.
+## After Going Through the basics, We will Now Perform Algorithms on Different Datasets.
 
 ## Implementation of Algorithms on Datasets
 
