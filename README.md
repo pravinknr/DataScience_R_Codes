@@ -184,8 +184,10 @@ We require [Positive Words](https://github.com/pravinknr/DataScience_R_Codes/blo
 ### Web Scraping
 
 If you want to extract the Reviews of a particular Product from Amazon then Run the Below Code in Rstudio.
-**This Code is Valid only for the Products on Amazon**
-*The Code Varies from site to site*
+
+**This Code is Valid only for the Products on Amazon**.
+
+*The Code Varies from site to site*.
 
 ```rstudio
 install.packages("rvest")
@@ -210,3 +212,107 @@ length(amazon_reviews)
 write.table(amazon_reviews,"apple.txt",row.names = F)
 ```
 I have Performed this code for Extracting [Reviews of Apple Macbook Air](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/web_Scraping_AmazonOnly.r), Do check it Out.
+
+***
+
+***
+
+## After Going Through the basics, We will Now Perform Algoritjmson Different Datasets.
+
+## Implementation of Algorithms on Datasets
+
+### 1. Hypothesis Testing
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1. | Buyer Ratio | [.pptx](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Buyer%20Ratio/Buyer_Ratio_Problem_Statement.pptx) | [BuyerRatio.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Buyer%20Ratio/BuyerRatio.csv) | [BuyerRatio.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Buyer%20Ratio/BuyerRatio.r) |
+| 2. | Customer Order Form | [.pptx](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Customer%20Order%20Form/Custormer_Problem_Statement.pptx) | [Customer+OrderForm.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Customer%20Order%20Form/Costomer%2BOrderForm.csv) | [Customer+OrderForm.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Customer%20Order%20Form/Costomer%2BOrderForm.r) |
+| 3. | Cutlet Diameter | [.pptx](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Cutlet%20Diameter/Cutlet_Problem_Statement.pptx) | [Cutlets.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Cutlet%20Diameter/Cutlets.csv) | [Cutlet_Hyp_Test.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Cutlet%20Diameter/cutlet_Hyp_Test.r) |
+| 4. | Fantaloons | [.pptx](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Fantaloons/Fantaloons_Problem_Statement.pptx)) | [Fantaloons.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Fantaloons/Fantaloons.csv) | [Fantaloons.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Fantaloons/Fantaloons.r) |
+| 5. | Lab | [.pptx](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Lab/Lab_Problem_Statement.pptx) | [LabTAT.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Lab/LabTAT.csv) | [Lab_Hyp_Anova_test.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Hypothesis%20Testing/Lab/lab_Hyp_Anova_test.r) |
+
+***
+
+### 2. Linear Regression
+
+#### A. Simple Linear regression
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1. | Calories Consumed | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Calories_Consumed/Problem_statements%20(1).txt) | [Calories_Consumed.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Calories_Consumed/calories_consumed.csv) | [Calories_Simple_Linear.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Calories_Consumed/calories_simple_linear.r) |
+| 2. | Delivery Time Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Delivery%20Time%20Data/Problem_statements%20(1).txt) | [Delivery_Time.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Delivery%20Time%20Data/delivery_time.csv) | [Delivery_Simple_Linear_Regression.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Delivery%20Time%20Data/delivery_Simple_Linear_Regression.r) |
+| 3. | Employee Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Employee%20Data/Problem_statements%20(1).txt) | [Emp_Data.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Employee%20Data/emp_data.csv) | [Emp_Simple_Linear.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Employee%20Data/emp_simple_linear.r) |
+| 4. | Salary Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Salary%20Data/Problem_statements%20(1).txt) | [Salary_Data.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Salary%20Data/Salary_Data.csv) | [Salary_Simple_Linear.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Simple%20Linear%20Regression/Salary%20Data/salary_simple_linear.r) |
+
+***
+
+#### B. Multi Linear Regression
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1. | 50 Startup | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/50%20Startup/proble_statement(50_startups).txt) | [50_Startups.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/50%20Startup/50_Startups.csv) | [50_Startup_Multi_Linear.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/50%20Startup/50_Startup_Multi_Linear.r) |
+| 2. | Computer Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/Computer%20Data/problem_Statement(computer_data).txt) | [Computer_Data.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/Computer%20Data/Computer_Data.csv) | [Computer_Data_Multi_Linear.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/Computer%20Data/Computer_Data_Multi_Linear.r) |
+| 3. | Computer Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/Toyota%20Corolla/Toyota%20Corolla.txt) | [ToyotaCorolla.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/Toyota%20Corolla/ToyotaCorolla.csv) | [ToyotaCorolla_Multi_Linear.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Linear%20Regression/Multi%20Linear%20Regression/Toyota%20Corolla/Toyota%20Corolla_Multi_Linear.r) |
+
+***
+
+### 3. Logistic Regression
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1. | Bank | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Logistic%20Regression/Bank/Problem-Statement(Bank_data).txt) | [Bank-Full.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Logistic%20Regression/Bank/bank-full.csv) | [Bank_logistic_Regression.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Logistic%20Regression/Bank/bank_logistic_regression.r) |
+| 2. | Credit Card | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Logistic%20Regression/Credit%20Card/Problem%20statement%20_%20credit.txt) | [Creditcard.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Logistic%20Regression/Credit%20Card/creditcard.csv) | [Creditcard_Logistic_regression.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Logistic%20Regression/Credit%20Card/creditcard_Logistic_Regression.r) |
+
+***
+
+### 4. Association Rule
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1. | Books | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Books/Problem_Statment.txt) | [Book.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Books/book.csv) | [Book.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Books/book.r) |
+| 2. | Groceries | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Groceries/Problem_Statment.txt) | [Groceries.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Groceries/groceries.csv) | [Groceries.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Groceries/groceries.r) |
+| 3. | Movies | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Movies/Problem_Statment.txt) | [My_Movies.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Movies/my_movies.csv) | [My_Movies.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Association%20Rules/Movies/my_movies.r) |
+
+***
+
+### 5. Clustering
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1. | Crime Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Clustering%20Analysis/Crime%20Data/ProblemSatement(crime_data).txt) | [Crime_Data.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Clustering%20Analysis/Crime%20Data/crime_data.csv) | [Crime_Data_Clustering.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Clustering%20Analysis/Crime%20Data/crime_data_clustering.r) |
+| 2. | East West Airlines | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Clustering%20Analysis/East%20West%20Airlines/Problem_Statement(Airlines).txt) | [EastWestAirlines.xlsx](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Clustering%20Analysis/East%20West%20Airlines/EastWestAirlines.xlsx) | [EastWestAirlines_Cluster.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Clustering%20Analysis/East%20West%20Airlines/EastWestAirlines_cluster.r) |
+
+*** 
+
+### 6. Principle Component Analysis(PCA)
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1.| Wine | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Principle%20Component%20Analysis(PCA)/Wine/PCA_problem%20Statement.txt) | [Wine.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Principle%20Component%20Analysis(PCA)/Wine/wine.csv) | [Wine_PCA.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Principle%20Component%20Analysis(PCA)/Wine/Wine_PCA.r) |
+
+***
+
+## Supervised Machine Learning Algorithms
+
+### 1. Decision Tree
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1.| Company Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Company%20Data/problem%20statement(company%20data).txt) | [Company_Data.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Company%20Data/Company_Data.csv) | [Company_Data.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Company%20Data/Company_Data.r) |
+| 2. | Fraud Check | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Fraud%20Check/Problem_statement(Fraudcheck).txt) | [Fraud_Check.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Fraud%20Check/Fraud_check.csv) | [Fraud_Check.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Fraud%20Check/Fraud_check.r) |
+| 3. | Iris | [.pdf](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Iris/Decision%2BTree%2BAssignment.pdf) | Available in R Dataset | [Iris_ctree.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Decision%20Tree/Iris/Iris_ctree.r) |
+
+### 2. Random Forest
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1.| Company Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Company%20Data/problem%20statement(company%20data).txt) | [Company_Data.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Company%20Data/Company_Data.csv) | [Company_Data.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Company%20Data/Company_Data.r) |
+| 2. | Fraud Check | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Fraud%20Check/Problem_statement(Fraudcheck).txt) | [Fraud_Check.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Fraud%20Check/Fraud_check.csv) | [Fraud_Check.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Fraud%20Check/Fraud_check.r) |
+| 3. | Iris | [.pdf](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Iris/problem%20statement(iris).pdf) | Available in R Dataset | [Iris.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/Random%20Forest/Iris/iris.r) |
+
+### 3. K-Nearest Neighbour (KNN) Classifier
+
+| No. | Name | Problem Statement | Dataset | File |
+| --- | --- | --- | --- | --- |
+| 1. | Glass Data | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/K-Nearest%20Neighbour%20Classifier/Glass%20data/problem_statement(Glass).txt) | [Glass.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/K-Nearest%20Neighbour%20Classifier/Glass%20data/glass.csv) | [Glass.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/K-Nearest%20Neighbour%20Classifier/Glass%20data/glass.r) |
+| 2. | Zoo | [.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/K-Nearest%20Neighbour%20Classifier/Zoo/Problem_Statement(Zoo).txt) | [Zoo.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/K-Nearest%20Neighbour%20Classifier/Zoo/Zoo.csv) | [Zoo.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/2.%20Implemetation%20of%20the%20Algorithms%20on%20Datasets/Supervised%20Machine%20Learning%20Techniques/K-Nearest%20Neighbour%20Classifier/Zoo/Zoo.r) |
