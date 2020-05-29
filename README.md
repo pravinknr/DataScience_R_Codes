@@ -173,3 +173,35 @@ We require [Positive Words](https://github.com/pravinknr/DataScience_R_Codes/blo
 | --- | --- | --- | --- |
 | 1. | Emotion Mining | [Amazon Nokia Lumia Reviews.txt](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/NLP%20-%20Natural%20Language%20Processing/Emotion%20Mining/amazon%20nokia%20lumia%20reviews.txt) | [Emotion_Mining_Amazon.r]() |
 | 2. | Sentiment Analysis | [McD_Small.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/NLP%20-%20Natural%20Language%20Processing/Sentiment%20Analysis%20in%20r/McD/Mcd_Small.csv) | [Sentiment Analysis_McD.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/NLP%20-%20Natural%20Language%20Processing/Sentiment%20Analysis%20in%20r/McD/Sentiment_Analysis_Mcd.r) |
+
+***
+
+### Web Scraping
+
+If you want to extract the Reviews of a particular Product from Amazon then Run the Below Code in Rstudio.
+**This Code is Valid only for the Products on Amazon**
+*The Code Varies from site to site*
+
+```rstudio
+install.packages("rvest")
+install.packages("XML")
+install.packages("magrittr")
+
+library(rvest)
+library(XML)
+library(magrittr)
+
+# Amazon Reviews #############################
+aurl <- "URL of Product Reviews page"
+amazon_reviews <- NULL
+for (i in 1:10){
+  murl <- read_html(as.character(paste(aurl,i,sep="=")))
+  rev <- murl %>%
+    html_nodes(".review-text") %>%
+    html_text()
+  amazon_reviews <- c(amazon_reviews,rev)
+}
+length(amazon_reviews)
+write.table(amazon_reviews,"apple.txt",row.names = F)
+```
+I have Performed this code for Extracting [Reviews of Apple Macbook Air](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/web_Scraping_AmazonOnly.r), Do check it Out.
