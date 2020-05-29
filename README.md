@@ -1,7 +1,6 @@
 
 ![](https://img.shields.io/drone/build/pravinknr/DataScience_R_Codes)
 ![](https://img.shields.io/github/issues/pravinknr/DataScience_R_Codes)
-[![visits](https://github-visit-counter.herokuapp.com/pravinknr/DataScience_R_Codes/visits.svg)](#)
 ![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://pravinknr.github.io/DataScience_R_Codes/)]
 ![](https://img.shields.io/github/repo-size/pravinknr/DataScience_R_Codes)
 ![](https://img.shields.io/github/languages/code-size/pravinknr/DataScience_R_Codes)
@@ -100,6 +99,7 @@ Now lets Go through Various Algorithms.
 ***
 
 ### 7. Survival Analysis
+
 | No | Name | Dataset | File|
 | --- | --- | --- | --- |
 | 1. | Unemployment | [Survival_Unemployment.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Survival%20Analysis/Unemployment/survival_unemployment1.csv) | [Survival_Unemployment.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Survival%20Analysis/Unemployment/Survival_Unemployment.r) |
@@ -121,6 +121,7 @@ Now lets Go through Various Algorithms.
 ***
 
 ### 2. K-Nearest Neighbour(KNN)
+
 | No | Name | Dataset | File|
 | --- | --- | --- | --- |
 | 1. | Cancer | [KNN.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/K-Nearest%20Neighbour/Example/KNN.csv) | [K-Nearest_Neighbour.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/K-Nearest%20Neighbour/Example/K_Nearest_Neighbour.r) |
@@ -128,6 +129,7 @@ Now lets Go through Various Algorithms.
 ***
 
 ### 3. Random Forest
+
 | No | Name | Dataset | File|
 | --- | --- | --- | --- |
 | 1. | Iris | Available in R Datasets | [random_forest.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/Random%20Forest/Example/random_forest.r) |
@@ -135,6 +137,7 @@ Now lets Go through Various Algorithms.
 ***
 
 ### 4. Artificial Neural Networks
+
 | No | Name | Dataset | File|
 | --- | --- | --- | --- |
 | 1. | Concrete |[concrete.csv](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/Neural%20Networks/Concrete/concrete.csv) | [Concrete_Neural_Network.r](https://github.com/pravinknr/DataScience_R_Codes/blob/master/1.%20Practice(Basics)/Supervised%20Machine%20Learning%20Techniques%20in%20R/Neural%20Networks/Concrete/concrete.csv) |
