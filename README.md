@@ -4,7 +4,7 @@
 ![](https://img.shields.io/github/stars/pravinknr/DataScience_R_Codes?style=social)
 ![](https://img.shields.io/github/watchers/pravinknr/DataScience_R_Codes?style=social)
 ![](https://img.shields.io/github/issues/pravinknr/DataScience_R_Codes)
-![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://rdatascience.pravinkonar.tech/)]
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://pravinknr.github.io.DataScience_R_Codes/)]
 ![](https://img.shields.io/github/repo-size/pravinknr/DataScience_R_Codes)
 ![](https://img.shields.io/github/languages/code-size/pravinknr/DataScience_R_Codes)
 
