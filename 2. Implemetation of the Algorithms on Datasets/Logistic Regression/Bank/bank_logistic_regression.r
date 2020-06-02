@@ -25,16 +25,16 @@ var(previous)
 
 #We see that the categorical Variables are defined as Character. Lets convert it into the Categorical variable using Factor function
 
-job <- as.factor(job)
-marital <- as.factor(marital)
-education <- as.factor(education)
-default <- as.factor(default)
-housing <- as.factor(housing)
-loan <- as.factor(loan)
-contact <- as.factor(contact)
-bank <- as.factor(month)
-poutcome <- as.factor(poutcome)
-y <- as.factor(y)
+bank$job <- as.factor(bank$job)
+bank$marital <- as.factor(bank$marital)
+bank$education <- as.factor(bank$education)
+bank$default <- as.factor(bank$default)
+bank$housing <- as.factor(bank$housing)
+bank$loan <- as.factor(bank$loan)
+bank$contact <- as.factor(bank$contact)
+bank$month <- as.factor(bank$month)
+bank$poutcome <- as.factor(bank$poutcome)
+bank$y <- as.factor(bank$y)
 
 summary(bank)
 
